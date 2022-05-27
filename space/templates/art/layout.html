@@ -1,4 +1,5 @@
-<!-- {% load static %} -->
+{% load django_bootstrap5 %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +8,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'art/style.css' %}">
 
     {% if title %}
         <title>ArtSpace-{{ title }}</title>
     {% else %}
         <title>Art Space</title>
-    {% endif %}
+    {% endif %}    
+    
+    <!--CSS -->
+    {% block styles %}
+    {% bootstrap_css %}
+         <link rel="stylesheet" type="text/css" href="{% static 'art/style.css' %}">
+    {% endblock %}
 </head>
 <body>
     <header class="site-header">
@@ -29,7 +34,6 @@
                 <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
                 <a class="nav-item nav-link" href="{% url 'explore' %}">Explore</a>
               </div>
-              <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 <a class="nav-item nav-link" href="#">Login</a>
                 <a class="nav-item nav-link" href="#">Register</a>
@@ -38,6 +42,7 @@
           </div>
         </nav>
       </header>
+
     <div class="container">
         {% block content %}{% endblock %}
     </div>
