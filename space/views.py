@@ -4,11 +4,9 @@ from django.http import HttpResponse
 
 # View for home page
 def home(request):
-    return HttpResponse('Home')
-
+    return render (request, 'art/home.html')
 # view for explore page
 def explore(request):
-    return HttpResponse('Explore')
-# view for search page
+    return render (request, 'art/explore.html')# view for search page
 def search(request):
-    return HttpResponse('Search')
+    return render (request, 'art/search.html')
