@@ -1,0 +1,22 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>ArtSpace-{{ title }}</title>
+    {% else %}
+        <title>Art Space</title>
+    {% endif %}
+</head>
+<body>
+    
+</body>
+</html>
