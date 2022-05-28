@@ -55,7 +55,18 @@ class Image(models.Model):
 
     def deleteImage(self):
         self.delete()
+
+    
     @classmethod
     def getImages(cls):
         allImages = cls.objects.all()
         return allImages
+
+    @classmethod
+    def filterByLocation(cls,id):
+        imageLocation = cls.objects.filter(location_id=id)
+        return imageLocation
+
+
+
+        
