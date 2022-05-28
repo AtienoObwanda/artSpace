@@ -1,3 +1,4 @@
+from email import message
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
@@ -31,4 +32,8 @@ def imageLocation(request, location_id):
 
 
 def search(request):
-    return render (request, 'art/search.html')
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.searchImage(search_term)
+        message=f'{search_term}'
+    return render (request, 'art/search.html',{"message":message,"images": searched_images})
