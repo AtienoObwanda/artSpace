@@ -52,8 +52,38 @@ class ImageTest(TestCase):
             Location.objects.all().delete()
             Tags.objects.all().delete()
 
+        def test_deleteImage(self):
+            
+            self.new_image.deleteImage()
+            image = Image.objects.all()
+            self.assertEqual(len(image),0)
+
+        def test_updateImage(self):
+            
+            self.new_image.updateImage()
+            updatedImage = Image(image_name='Kenyan foods',image_description='Kenyan Delicacy')
+            self.new_image.save_image() 
+
+
         def test_getImages(self):
             allImages = Image.getImages()
             self.assertTrue(len(allImages)>0)
+        
+        def test_getImagebyId(self):
+            test_id=1
+            getImage = Image.objects.filter(test_id)
+            self.assertTrue(len(getImage)>0)
+
+        def test_filterByLocation(self):
+            testLocationId = 1
+            imageLocation = Image.filter(testLocationId)
+            self.assertTrue(len(imageLocation)==0)
+
+        def test_filterByCategory(self):
+            testCategoryId = 1
+            imageCategory = Image.filter(testCategoryId)
+            self.assertTrue(len(imageCategory)==0)
+
+
 
 
