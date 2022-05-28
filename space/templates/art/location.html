@@ -4,11 +4,11 @@
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for image in images %}
+        {% for location in locaations %}
 
         <div class="col">
           <div class="card shadow-sm">
-            <img src="{{image.image.url}}" class="img-responsive" alt="..." data-toggle="modal" data-target="#{{image.id}}" style="width:100%; height:100%;">
+            <img src="{{location.image.url}}" class="img-responsive" alt="..." data-toggle="modal" data-target="#{{location.image.id}}" style="width:100%; height:100%;">
 
             <!-- <role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
 
@@ -18,7 +18,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted" >{{image.uploadDate}}</small>
+                <small class="text-muted" >{{location.image.uploadDate}}</small>
               </div>
             </div>
           </div>

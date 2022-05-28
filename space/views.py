@@ -24,15 +24,18 @@ def explore(request):
 def imageCategory(request, category_id):
     try:
         categories=Image.filterByCategory(category_id)
-        # images = Image.getImages(category_id)
 
     except Image.DoesNotExist:
         raise Http404()
     return render(request, 'art/category.html', {'categories': categories})
 
 def imageLocation(request, location_id):
-    images = Image.filterByLocation(location_id) 
-    return render(request,'art/location.html',{"images":images}) 
+    try:
+        locations=Image.filterByLocation(location_id)
+
+    except Image.DoesNotExist:
+        raise Http404()
+    return render(request,'art/location.html',{"locations": locations}) 
 
 
 

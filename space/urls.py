@@ -12,7 +12,7 @@ urlpatterns = [
     path('explore', views.explore, name='explore'),
     path('search', views.search, name='search'),
     path('category/<int:category_id>/', views.imageCategory, name='category'),
-    path('location/(\d+)', views.imageLocation, name='location'),
+    path('location/<int:location_id>/', views.imageLocation, name='location'),
 
 
 ]
