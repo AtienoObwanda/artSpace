@@ -11,7 +11,7 @@ class LocationTestClass(TestCase):
         self.assertTrue(isinstance(self.kenya,Location)) 
 
     def test_save_method(self):
-        self.kenya.save_category()
+        self.kenya.saveLocation()
         location = Location.objects.all()
         self.assertTrue(len(location)>0)   
 
@@ -23,7 +23,7 @@ class CategoryTestClass(TestCase):
         self.assertTrue(isinstance(self.food,Category)) 
 
     def test_save_method(self):
-        self.food.save_category()
+        self.food.saveCategory()
         categories = Category.objects.all()
         self.assertTrue(len(categories)>0)   
 

@@ -19,17 +19,25 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def saveCategory(self):
+        self.save()
+
+
 # Location model
 class Location(models.Model):
     name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
+    def saveLocation(self):
+        self.save()
+
 
 # Tags model
 class Tags(models.Model):
     name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
+   
 
 # Images Model
 class Image(models.Model):
