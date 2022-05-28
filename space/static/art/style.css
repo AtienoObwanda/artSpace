@@ -11,8 +11,8 @@
 body {
   background: #fafafa;
   color: #333333;
-  margin-top: 5rem;
-  font-family: 'Newyork';
+  /* margin-top: 5rem; */
+  
 }
 
 ul {
@@ -25,6 +25,8 @@ ul {
 
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
+  font-family: 'Newyork';
+  font-weight: 900;
 }
 
 .site-header .navbar-nav .nav-link:hover {
