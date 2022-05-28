@@ -42,7 +42,7 @@ class Tags(models.Model):
 # Images Model
 class Image(models.Model):
     # image = models.ImageField(upload_to = 'articles/', blank=True)
-    image = ResizedImageField(size=[1000, 1000], crop=['middle', 'center'], upload_to='articles/', blank=True)
+    image = ResizedImageField(size=[1000, 1000], crop=['middle', 'center'], upload_to='art/', blank=True)
     imageName = models.CharField(max_length=60)
     description = models.TextField()
     uploadDate = models.DateTimeField(blank=True, null=True)
