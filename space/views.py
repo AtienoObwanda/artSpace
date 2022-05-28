@@ -6,6 +6,8 @@ from .models import *
 # View for home page
 def home(request):
     return render (request, 'art/home.html')
+
+
 # view for explore page
 def explore(request):
     # images = Image.objects.all()
@@ -17,6 +19,16 @@ def explore(request):
     # context['images'] = images
 
     return render (request, 'art/explore.html', {"images": images, "categories": categories, "locations": locations})# view for search page
+
+def imageCategory(request, category_id):
+    images = Image.filterByCategory(category_id) 
+    return render(request,'art/category.html',{"images":images}) 
+
+def imageLocation(request, location_id):
+    images = Image.filterByLocation(location_id) 
+    return render(request,'art/location.html',{"images":images}) 
+
+
 
 def search(request):
     return render (request, 'art/search.html')

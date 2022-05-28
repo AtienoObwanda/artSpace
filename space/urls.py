@@ -1,3 +1,5 @@
+from email.mime import image
+from unicodedata import category
 from django import views
 from django.urls import path
 from django.conf.urls.static import static
@@ -8,7 +10,10 @@ urlpatterns = [
     # path('', admin.site.urls),
     path('', views.home, name='home'),
     path('explore', views.explore, name='explore'),
-    path('search', views.search, name='search')
+    path('search', views.search, name='search'),
+    path('category', views.imageCategory, name='category'),
+    path('location', views.imageLocation, name='location'),
+
 
 ]
 if settings.DEBUG:
