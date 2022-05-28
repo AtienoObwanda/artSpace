@@ -11,7 +11,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('explore', views.explore, name='explore'),
     path('search', views.search, name='search'),
-    path('category/(\d+)', views.imageCategory, name='category'),
+    path('category/<int:category_id>/', views.imageCategory, name='category'),
     path('location/(\d+)', views.imageLocation, name='location'),
 
 

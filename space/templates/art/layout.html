@@ -40,11 +40,11 @@
                     <div class="collapse navbar-collapse" id="navbarToggle">
                         <div class="navbar-nav mr-auto">
                             <a class="nav-item nav-link ms-5 mr-2" href="{% url 'home' %}">Home</a>
-                            <a class="nav-item nav-link ms-5" href="{% url 'location' %}">Explore</a>
-                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Kenya </a>
-                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Tanzania</a>
-                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Rwanda</a>
-                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">South Africa</a>        
+                            <a class="nav-item nav-link ms-5" href="{% url 'explore' %}">Explore</a>
+                            {% for location in locations %}
+                                <a href="location/{{location.id}}" class="nav-item nav-link ms-5 mr-2">{{location.name}}</a>
+                                
+                            {% endfor%}       
                         </div>
                         <!-- Navbar right-->
                        
@@ -83,13 +83,10 @@
                 </form>
               </div> 
               <!-- search form end -->
-            <a class="p-2 link-secondary" href="{% url 'category' %}">Food</a>
-            <a class="p-2 link-secondary" href="{% url 'category' %}">Melanin</a>
-            <a class="p-2 link-secondary" href="{% url 'category' %}">Creative</a>
-            <a class="p-2 link-secondary" href="{% url 'category' %}">Nature</a>
-            <a class="p-2 link-secondary" href="{% url 'category' %}">LandScapes</a>
-            <a class="p-2 link-secondary" href="{% url 'category' %}">Black & White</a>
-            <!-- <a class="p-2 link-secondary" href="{% url 'category' %}">Politics</a> -->
+              {% for category in categories %}
+                <a class="p-2 link-secondary" href="{% url 'category' category.id %}">{{category.name}}</a>
+             {% endfor %}
+         
       
           </nav>
         </div>
@@ -98,6 +95,15 @@
 
     <div class="container-fluid">
         {% block content %}{% endblock %}
+        
     </div>
+   <div class="container mb-0">
+    <!-- <footer class="blog-footer">
+        <a class="navbar-brand mr-4" href="{% url 'home' %}" style="color: #ee4723; font-weight: bolder;">ArtSpace</a>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
+      </footer> -->
+   </div>
 </body>
 </html>

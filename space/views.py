@@ -1,6 +1,6 @@
 from email import message
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 from .models import *
 # Create your views here.
 
@@ -22,8 +22,13 @@ def explore(request):
     return render (request, 'art/explore.html', {"images": images, "categories": categories, "locations": locations})# view for search page
 
 def imageCategory(request, category_id):
-    images = Image.filterByCategory(category_id) 
-    return render(request,'art/category.html',{"images":images}) 
+    try:
+        categories=Image.filterByCategory(category_id)
+        # images = Image.getImages(category_id)
+
+    except Image.DoesNotExist:
+        raise Http404()
+    return render(request, 'art/category.html', {'categories': categories})
 
 def imageLocation(request, location_id):
     images = Image.filterByLocation(location_id) 
