@@ -35,7 +35,7 @@ def imageLocation(request, location_id):
 
     except Image.DoesNotExist:
         raise Http404()
-    return render(request,'art/location.html',{"locations": locations}) 
+    return render(request,'art/location.html', {'locations': locations}) 
 
 
 
