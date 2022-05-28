@@ -22,55 +22,79 @@
     {% endblock %}
 </head>
 <body>
-  <header class="site-header" >
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'home' %}" style="color: #ee4723; font-weight: bolder;">ArtSpace</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Explore</a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Food </a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Nature</a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Melanin</a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Landscape</a>
-                    <a class="nav-item nav-link" href="{% url 'explore' %}">Black & White</a>
-
+    <div class="container">
+        <header class="blog-header lh-1 py-3 site-header">
+          <div class="row flex-nowrap justify-content-between align-items-center">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                <div class="container">
+                    <a class="navbar-brand mr-4" href="{% url 'home' %}" style="color: #ee4723; font-weight: bolder;">ArtSpace</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--Dummy-divs space Creator-->
+                    <div class="ms-5"></div>
+                    <div class="ms-5"></div>
+                    <div class="ms-5"></div>
+                    <div class="ms-5"></div>
+                    <!--End of Dummy spacer-->
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'home' %}">Home</a>
+                            <a class="nav-item nav-link ms-5" href="{% url 'location' %}">Explore</a>
+                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Kenya </a>
+                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Tanzania</a>
+                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">Rwanda</a>
+                            <a class="nav-item nav-link ms-5 mr-2" href="{% url 'location' %}">South Africa</a>        
+                        </div>
+                        <!-- Navbar right-->
+                       
+                        <!-- <div class="navbar-nav ms-auto"> -->
+                          
+                            <!-- {% if current_user.is_authenticated %} -->
+                                <!-- <a class="nav-item nav-link align-right" href="#">New Post</a> -->
+                                <!-- <a class="nav-item nav-link align-right" href="#">Account</a> -->
+                                <!-- <a class="nav-item nav-link align-right" href="#">Logout</a> -->
+                            <!-- {% else%} -->
+                                <!-- <a class="nav-item nav-link align-right" href="#">Login</a>
+                                <a class="nav-item nav-link align-right" href="#">Register</a> -->
+                            <!-- {% endif %} 
+                             </div> -->
+                    </div> 
                 </div>
-                <!-- Navbar right-->
-                <!-- search form end -->
-                <div class="col-sm-4 col-md-4 navbar-right">
-
-                  <form class="navbar-form" role="search" action="{% url 'explore' %}">
-          
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search Boards" name="article">
-                      <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                      </div>
+            </nav>
+           
+          </div>
+        </header>
+      
+        <div class="nav-scroller py-1 mb-2 mt-3 pt-3">
+          <nav class="nav d-flex justify-content-between">
+             <!-- search form start -->
+             <div class="col-sm-4 col-md-4 navbar-right ms-0">
+        
+                <form class="navbar-form" role="search" action="{% url 'explore' %}">
+        
+                  <div class="input-group ms-5 mr-2">
+                    <input type="text" class="form-control" placeholder="Search Boards" name="article">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
-          
-                  </form>
-                </div>
-                <!-- search form end -->
-                <div class="navbar-nav ms-auto">
-                  
-                    <!-- {% if current_user.is_authenticated %} -->
-                        <!-- <a class="nav-item nav-link align-right" href="#">New Post</a> -->
-                        <!-- <a class="nav-item nav-link align-right" href="#">Account</a> -->
-                        <!-- <a class="nav-item nav-link align-right" href="#">Logout</a> -->
-                    <!-- {% else%} -->
-                        <a class="nav-item nav-link align-right" href="#">Login</a>
-                        <a class="nav-item nav-link align-right" href="#">Register</a>
-                    <!-- {% endif %} -->
-                    </div>
-            </div> 
+                  </div>
+        
+                </form>
+              </div> 
+              <!-- search form end -->
+            <a class="p-2 link-secondary" href="{% url 'category' %}">Food</a>
+            <a class="p-2 link-secondary" href="{% url 'category' %}">Melanin</a>
+            <a class="p-2 link-secondary" href="{% url 'category' %}">Creative</a>
+            <a class="p-2 link-secondary" href="{% url 'category' %}">Nature</a>
+            <a class="p-2 link-secondary" href="{% url 'category' %}">LandScapes</a>
+            <a class="p-2 link-secondary" href="{% url 'category' %}">Black & White</a>
+            <!-- <a class="p-2 link-secondary" href="{% url 'category' %}">Politics</a> -->
+      
+          </nav>
         </div>
-    </nav>
-</header>
+      </div>
+  
 
     <div class="container-fluid">
         {% block content %}{% endblock %}
