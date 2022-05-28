@@ -56,11 +56,18 @@ class Image(models.Model):
     def deleteImage(self):
         self.delete()
 
+    def updateImage(self):
+        self.update()
+
     
     @classmethod
     def getImages(cls):
         allImages = cls.objects.all()
         return allImages
+    @classmethod
+    def getImagebyId(cls):
+        getImage = cls.objects.filter(id)
+        return getImage
 
     @classmethod
     def filterByLocation(cls,id):
