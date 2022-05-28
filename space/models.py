@@ -15,19 +15,19 @@ from flask_sqlalchemy import Model
 
 # Category model
 class Category(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
 
 # Location model
 class Location(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
 
 # Tags model
 class Tags(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
 
