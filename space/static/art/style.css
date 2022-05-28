@@ -49,10 +49,12 @@ ul {
 .image-background h1 {
   color: #fff;
   font-weight: bolder;
+  font-family: Newyork;
 }
 .image-background p {
   color: #fff;
   font-weight:500;
+  font-family: Gotham Pro;
 }
 
 .span{
