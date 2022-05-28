@@ -47,11 +47,11 @@ def displayImage(request, image_id):
     locations = Location.objects.all()
     categories = Category.objects.all()
     try:
-        displayImage=Image.getImagebyId(image_id)
+        displayImage=Image.objects.get(id = image_id)
 
     except Image.DoesNotExist:
         raise Http404()
-    return render(request,'art/location.html', {"categories": categories, "locations": locations,"displayImage": displayImage}) 
+    return render(request,'art/image.html', {"categories": categories, "locations": locations,"displayImage": displayImage}) 
 
 
 
