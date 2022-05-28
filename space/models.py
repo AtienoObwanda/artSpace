@@ -1,8 +1,8 @@
-from unicodedata import category
 from django.db import models
-from 
-# Create your models here.
-# Models used are: image,category,location, and user
+from django_resized import ResizedImageField
+
+
+# Models created are: image,category,location, and user
 
 # class User(models.Model):
 #     firstName = models.CharField(max_length=30)
