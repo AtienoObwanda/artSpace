@@ -13,6 +13,7 @@ urlpatterns = [
     path('search', views.search, name='search'),
     path('category/<int:category_id>/', views.imageCategory, name='category'),
     path('location/<int:location_id>/', views.imageLocation, name='location'),
+    path('image/<int:image_id>/', views.displayImage, name='image'),
 
 
 ]

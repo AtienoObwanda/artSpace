@@ -43,13 +43,23 @@ def imageLocation(request, location_id):
         raise Http404()
     return render(request,'art/location.html', {"categories": categories, "locations": locations,"displaylocations": displaylocations}) 
 
+def displayImage(request, image_id):
+    locations = Location.objects.all()
+    categories = Category.objects.all()
+    try:
+        displayImage=Image.getImagebyId(image_id)
+
+    except Image.DoesNotExist:
+        raise Http404()
+    return render(request,'art/location.html', {"categories": categories, "locations": locations,"displayImage": displayImage}) 
+
 
 
 def search(request):
     locations = Location.objects.all()
     categories = Category.objects.all()
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_images = Image.searchImage(search_term)
+    if 'name' in request.GET and request.GET["name"]:
+        search_term = request.GET.get("name")
+        searched_names = Image.searchImage(search_term)
         message=f'{search_term}'
-    return render (request, 'art/search.html',{"message":message,"images": searched_images, "categories": categories, "locations": locations})
+    return render (request, 'art/search.html',{"message":message,"names": searched_names, "categories": categories, "locations": locations})

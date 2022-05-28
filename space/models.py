@@ -66,7 +66,7 @@ class Image(models.Model):
         return allImages
     @classmethod
     def getImagebyId(cls):
-        getImage = cls.objects.filter(id)
+        getImage = cls.objects.filter(image_id = id)
         return getImage
 
     @classmethod
