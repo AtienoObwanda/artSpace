@@ -42,5 +42,10 @@ class Image(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     tags= models.ManyToManyField(Tags)
 
-    def __str__(self):
-        return self.imageName
+    def saveImage(self):
+        return self.save()
+
+    @classmethod
+    def getImages(cls):
+        allImages = cls.objects.all()
+        return allImages
