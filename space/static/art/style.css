@@ -156,3 +156,8 @@ ul {
 }
 
 
+.hero span {
+  color: #ee4723;
+  border-bottom: 6px solid #ffff;
+  border-radius: 20px;
+}

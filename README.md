@@ -1,6 +1,6 @@
 **ArtSpace** 
 ****
-![Alt text](/projectScreenshot/landing.png?raw=true "Optional Title")
+![Alt text](/projectScreenshot/hero.png?raw=true "Optional Title")
 
 **Description:**
 ****
