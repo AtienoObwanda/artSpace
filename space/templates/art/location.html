@@ -7,19 +7,16 @@
         {% for displaylocation in displaylocations %}
 
 
-        <div class="col">
-          <div class="card shadow-sm">
+        <div class="col mb-4">
+          <div class="card shadow-sm showHover">
             <img src="{{displaylocation.image.url}}" class="img-responsive" alt="..." data-toggle="modal" style="width:100%; height:100%;">
 
             <!-- <role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
 
             <div class="card-body" style="margin-top: -3.3em;">
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group hideHover">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted" > <a href="{% url 'image' displaylocation.id %}">{{displaylocation.uploadDate}}</a></small>
+               
+                <small class="hideHover" style="font-size: 12px; font-weight: bold"> <a href="{% url 'image' displaylocation.id %}" style="text-decoration: none; color: #ee4723;">View</a></small>
               </div>
             </div>
           </div>

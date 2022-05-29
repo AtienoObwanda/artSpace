@@ -58,8 +58,14 @@ def displayImage(request, image_id):
 def search(request):
     locations = Location.objects.all()
     categories = Category.objects.all()
-    if 'name' in request.GET and request.GET["name"]:
-        search_term = request.GET.get("name")
-        searched_names = Image.searchImage(search_term)
-        message=f'{search_term}'
-    return render (request, 'art/search.html',{"message":message,"names": searched_names, "categories": categories, "locations": locations})
+
+    if 'searchedImage' in request.GET and request.GET["searchedImage"]:
+        search_term = request.GET.get("searchedImage")
+        searchedImages = Image.searchImage(search_term)
+        message=f"{search_term}"
+        return render (request, 'art/search.html',{"message":message,"searchedImages": searchedImages, "categories": categories, "locations": locations})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'art/explore.html',{"message":message, "categories": categories, "locations": locations})
+
+

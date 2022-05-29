@@ -39,8 +39,9 @@ ul {
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
   font-family: 'Newyork';
-  font-weight: 900;
+  font-weight: 800;
   color: #000;
+  font-size: 13px;
 }
 
 .site-header .navbar-nav .nav-link:hover {
