@@ -149,5 +149,9 @@ ul {
   display: none;
 }
 
+.showHover:hover .hideHover{
+  display: block;
+  margin-bottom: -2em;
+}
 
 
