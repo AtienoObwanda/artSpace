@@ -17,9 +17,9 @@
         <div class="col-lg-6 col-md-6 mobile-img text-center">
             <h4 class="mt-3 pt-3" style="color:#ee4723; font-family: Italiana; font-weight: 700;">{{displayImage.imageName}}</h4>
             <br>
-                 <h6><span style="font-weight: bold;">Caption:</span></h6> <small style="font-size: 12px;">{{displayImage.description}}</small> <br><br>
-                    <p><span style="font-weight: bold; font-size: 10px;">Origin:</span> <small style="font-size: 10px;">{{displayImage.location}}</small> |<span style="font-weight: bold; font-size: 10px;">Category:</span> <small style="font-size: 10px;">{{displayImage.category}}</small> </p> 
-                    <h6><span style="font-weight: bold; font-size: 10px;">Posted:</span> <small style="font-size: 10px;">{{displayImage.uploadDate|timesince}} ago</small> </h6> 
+                 <h6><span style="font-weight: bold;">Caption:</span></h6> <small style="font-size: 14px;">{{displayImage.description}}</small> <br><br>
+                    <p><span style="font-weight: bold; font-size: 12px;">Origin:</span> <small style="font-size: 12px;">{{displayImage.location}}</small> |<span style="font-weight: bold; font-size: 12px;">Category:</span> <small style="font-size: 12px;">{{displayImage.category}}</small> </p> 
+                    <h6><span style="font-weight: bold; font-size: 12px;">Posted:</span> <small style="font-size: 12px;">{{displayImage.uploadDate|timesince}} ago</small> </h6> 
                     <!-- <small><a class="text-center" style="color: #ee4723;font-family: Italiana; font-weight: 700; text-decoration: none;">Share</a> </small> -->
                   
                         <button class="btn btn-outline-primary copy-btn button-17" data-hex="https://aartspace.herokuapp.com{% url 'image' displayImage.id %}" style="box-shadow: #ee482321 0px 7px 29px 0px;">
