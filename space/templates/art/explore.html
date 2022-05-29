@@ -8,25 +8,69 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <img src="{{image.image.url}}" class="img-responsive" alt="..." data-toggle="modal" data-target="#{{image.id}}" style="width:100%; height:100%;" >
+            <img src="{{image.image.url}}" class="img-responsive" alt="..."  style="width:100%; height:100%;" >
 
             <!-- <role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
 
             <div class="card-body" style="margin-top: -3.3em;">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group hideHover">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted" > <a href="{% url 'image' image.id %}">{{image.uploadDate}}</a></small>
+                <small class="text-muted badge badge-white" > <a href="{% url 'image' image.id %}" style="text-decoration: none; color: #ee4723;">{{image.imageName}}</a></small>
+                <button class="badge badge-white" id="myBtn{{image.id}}" style="background-color: transparent; border:#ee4723;color:#ee482356">Expand</button>
+
               </div>
             </div>
           </div>
         </div>
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+              <div class="modal-body">
+                <img src="{{image.image.url}}" class="img-responsive" alt="..."  style="width:50%; height:50%;" >
+              </div>
+              <h4 class="modal-title">{{image.imageName}}</h4>
+            </div>
+
+          </div>
+
+          <script>
+            // Get the modal
+           
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn{{image.id}}");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
         {% endfor %}
+
         </div>
         </div>
         </div>
         
-
+        
+          
 {% endblock content %}
