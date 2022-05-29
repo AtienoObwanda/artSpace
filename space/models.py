@@ -1,7 +1,7 @@
 from django.db import models
 from django_resized import ResizedImageField
 from django.utils import timezone
-from flask_sqlalchemy import Model
+from django.db import models
 
 # from django.conf import settings
 

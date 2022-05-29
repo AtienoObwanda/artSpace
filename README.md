@@ -4,7 +4,7 @@
 
 **Description:**
 ****
-**ArtSpace** *Is a gallery web application created using Django.The web application has a collection of images from different categories and locations...* </br> 
+**ArtSpace** *Is a gallery web application created using Django.The web application has a collection of images from different categories and locations... As the site admin, you can login, to your account and upload images, categorize them differently, also add their location etc.* </br> 
 
 **Author:***[Atieno Obwanda](https://github.com/AtienoObwanda)* 
 ****
