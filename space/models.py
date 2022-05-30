@@ -3,15 +3,6 @@ from django_resized import ResizedImageField
 from django.utils import timezone
 from django.db import models
 
-# from django.conf import settings
-
-# Models created are: image,category,location, and user
-
-# class User(models.Model):
-#     firstName = models.CharField(max_length=30)
-#     lastName = models.CharField(max_length=30)
-#     email = models.EmailField()
-#     phone_number = models.CharField(max_length = 10,blank =True)
 
 # Category model
 class Category(models.Model):

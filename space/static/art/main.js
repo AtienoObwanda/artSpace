@@ -20,6 +20,8 @@ copyBtns.forEach(btn => btn.addEventListener('click', () => {
 
 // Get the modal
 
+
+
 // const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
