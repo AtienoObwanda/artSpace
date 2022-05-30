@@ -94,9 +94,15 @@ atom .
 *Bootstrap 5*<br />
 
 <br/>
-**Bugs**
+
+**Bugs** 
 ****
+
+<br/>
+
 *There are no known bugs...*
+
+<br/>
 
 
 **Contact:**
