@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -84,16 +84,15 @@ WSGI_APPLICATION = 'Art.wsgi.application'
 
 # Database
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'artspacedb',
-    'USER': 'atieno',
-    'PASSWORD': 'Br55hznWO5ZWAo0XyR0rhPZen9kPVBU7',
-    'HOST': 'dpg-cecb6thgp3jg4teu4uc0-a',
-    'PORT': 5432
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ["PGDATABASE"],
+        'USER': os.environ["PGUSER"],
+        'PASSWORD': os.environ["PGPASSWORD"],
+        'HOST': os.environ["PGHOST"],
+        'PORT': os.environ["PGPORT"],
+    }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
