@@ -119,7 +119,7 @@ DATABASES = {
     'NAME': 'nduhqhvq',
     'USER': 'nduhqhvq',
     'PASSWORD': 'iuw1hxZCNcAH-GSh9clMzb8y4AXP41E1',
-    'HOST': 'rosie.db.elephantsql.com/nduhqhvq',
+    'HOST': 'postgres://nduhqhvq:iuw1hxZCNcAH-GSh9clMzb8y4AXP41E1@rosie.db.elephantsql.com/nduhqhvq',
     'PORT': 5432
   }
 }
