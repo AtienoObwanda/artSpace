@@ -116,10 +116,10 @@ WSGI_APPLICATION = 'Art.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'nduhqhvq',
-    'USER': 'nduhqhvq',
-    'PASSWORD': 'iuw1hxZCNcAH-GSh9clMzb8y4AXP41E1',
-    'HOST': 'postgres://nduhqhvq:iuw1hxZCNcAH-GSh9clMzb8y4AXP41E1@rosie.db.elephantsql.com/nduhqhvq',
+    'NAME': 'artspacedb',
+    'USER': 'atieno',
+    'PASSWORD': 'Br55hznWO5ZWAo0XyR0rhPZen9kPVBU7',
+    'HOST': 'dpg-cecb6thgp3jg4teu4uc0-a',
     'PORT': 5432
   }
 }
