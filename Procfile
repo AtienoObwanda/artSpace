@@ -1,1 +1,1 @@
-web: gunicorn Art.wsgi --log-file -
+web: python manage.py migrate && gunicorn Art.wsgi
